@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMONER - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="SUMMONER Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#portfolio">Portfolio 2D</a></li>
+                <li><a href="#tours">Tours 360°</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cv" class="cv-section">
+            <div class="cv-content">
+                <div class="cv-info">
+                    <h1>SUMMONER</h1>
+                    <h2>Diseñador Digital & Desarrollador Web</h2>
+                    <div class="experience">
+                        <h3>Experiencia</h3>
+                        <div class="experience-item">
+                            <h4>Diseñador Digital Senior</h4>
+                            <p>2020 - Presente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>Portfolio 2D</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/placeholder-1.jpg" alt="Proyecto 1">
+                    <div class="portfolio-item-content">
+                        <h3>Diseño Digital</h3>
+                        <p>Creación de contenido visual</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/placeholder-2.jpg" alt="Proyecto 2">
+                    <div class="portfolio-item-content">
+                        <h3>Modelado 3D</h3>
+                        <p>Diseño de espacios virtuales</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tours" class="tours">
+            <h2>Experiencias Virtuales 360°</h2>
+            <div class="tours-container">
+                <div class="tour-viewer">
+                    <div id="pano"></div>
+                </div>
+                <div class="tours-list">
+                    <div class="tour-item">
+                        <h3>Tour Virtual 1</h3>
+                        <p>Explora espacios inmersivos en 360°</p>
+                        <button class="tour-button" data-tour="tour1">Ver Tour</button>
+                    </div>
+                    <div class="tour-item">
+                        <h3>Tour Virtual 2</h3>
+                        <p>Descubre nuevas perspectivas</p>
+                        <button class="tour-button" data-tour="tour2">Ver Tour</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>Conectemos</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Email" required>
+                    <textarea placeholder="Cuéntame sobre tu proyecto" required></textarea>
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2024 SUMMONER. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/panolens@0.2.0/build/panolens.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

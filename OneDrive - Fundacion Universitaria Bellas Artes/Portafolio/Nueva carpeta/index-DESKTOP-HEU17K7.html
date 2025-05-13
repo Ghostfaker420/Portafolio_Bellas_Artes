@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#e85e27">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Titulo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Eliminar las cargas de script de aquí -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/LOGO.png" alt="Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#tours">Tours 360°</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a Mi Portafolio</h1>
+                <p>Explora mis proyectos y tours virtuales en 360°</p>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="about">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Aquí puedes escribir una breve descripción sobre ti y tu experiencia profesional.</p>
+                </div>
+                <div class="skills">
+                    <h3>Habilidades</h3>
+                    <ul>
+                        <li>Diseño 3D</li>
+                        <li>Fotografía 360°</li>
+                        <li>Desarrollo Web</li>
+                        <li>Edición de Video</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <!-- Los proyectos se agregarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <section id="tours" class="tours">
+            <h2>Tours Virtuales 360°</h2>
+            <div class="tours-container">
+                <div class="tour-viewer">
+                    <div id="pano">
+                        <!-- Mensaje de fallback -->
+                        <div style="color: white; text-align: center; padding: 20px; background-color: rgba(0,0,0,0.7);">
+                            Cargando visor 360°...
+                        </div>
+                        <!-- Indicador de carga -->
+                        <div class="loading-indicator"></div>
+                    </div>
+                </div>
+                <div class="tours-list">
+                    <!-- Los tours se agregarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>Contacto</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts al final -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/panolens@0.10.4/build/panolens.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
