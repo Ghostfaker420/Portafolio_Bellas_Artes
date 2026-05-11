@@ -1,0 +1,154 @@
+/* Estilos para la sección de galería */
+.gallery-section {
+    padding: 4rem 0;
+    background: var(--darker-bg);
+}
+
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-tab {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 30px;
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-tab:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.gallery-tab.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Estilos para la colección de autorretratos */
+.gallery-collection {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gallery-collection.active {
+    display: block;
+    opacity: 1;
+}
+
+.portraits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.portrait-item {
+    position: relative;
+    overflow: hidden;
+    /* border-radius, box-shadow, transition handled by gallery-matrix.css */
+}
+
+/* hover effect handled by gallery-matrix.css */
+/* .portrait-item:hover {
+    transform: scale(1.05);
+} */
+
+.portrait-item img {
+    width: 100%;
+    /* height and object-fit handled by gallery-matrix.css */
+    object-fit: cover; /* Ensure object-fit remains if not in gallery-matrix for this specific selector, though it is general there */
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para la colección de animaciones */
+.animations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.animation-item {
+    /* border-radius and box-shadow handled by gallery-matrix.css */
+    overflow: hidden;
+}
+
+.animation-item img {
+    width: 100%;
+    /* height handled by gallery-matrix.css */
+    display: block;
+}
+
+/* Estilos para la colección de carteles */
+.posters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.poster-item,
+.character-item,
+.illustration-item,
+.letter-item {
+    position: relative;
+    overflow: hidden;
+    /* border-radius, box-shadow, transition handled by gallery-matrix.css */
+}
+
+/* hover effect handled by gallery-matrix.css */
+/* .poster-item:hover {
+    transform: translateY(-5px);
+} */
+
+.poster-item img {
+    width: 100%;
+    /* height and object-fit handled by gallery-matrix.css */
+    object-fit: cover; /* Ensure object-fit remains if not in gallery-matrix for this specific selector, though it is general there */
+    transition: transform 0.3s ease;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .gallery-nav {
+        flex-wrap: wrap;
+    }
+
+    .gallery-tab {
+        width: calc(50% - 0.5rem);
+        text-align: center;
+    }
+
+    .portraits-grid,
+    .animations-grid,
+    .posters-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* height handled by gallery-matrix.css and aspect-ratio */
+    /* .portrait-item img,
+    .poster-item img {
+        height: 300px;
+    } */
+}
+
+@media (max-width: 480px) {
+    .gallery-tab {
+        width: 100%;
+    }
+
+    /* height handled by gallery-matrix.css and aspect-ratio */
+    /* .portrait-item img,
+    .poster-item img {
+        height: 250px;
+    } */
+}
