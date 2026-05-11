@@ -280,30 +280,40 @@ function initCustomCursor() {
 
 // Galería de proyectos mejorada
 function initProjectsGallery() {
-    // Datos de proyectos - solo dejamos el de stickers
-    const projects = [
-        {
-            title: 'Stickers',
-            description: 'Colección de stickers de arte urbano con diseños originales y estilo graffiti.',
-            image: 'images/Stickers Tanda 2/portada.jpg',
-            category: 'arte-urbano',
-            link: '#stickers-gallery'
-        }
-    ];
-
-    const projectsGrid = document.querySelector('.projects-grid');
-    
     // Si no hay contenedor de proyectos, salir de la función
+    const projectsGrid = document.querySelector('.projects-grid');
     if (!projectsGrid) return;
     
-    // Limpiar el contenedor
-    projectsGrid.innerHTML = '';
-    
-    // Ya no necesitamos filtros porque solo hay un proyecto
-    loadProjects(projects);
-    
-    // Crear el modal para la galería de stickers
-    createStickersGallery();
+    // Cargar proyectos desde archivo JSON externo
+    fetch('js/projects.json')
+        .then(response => response.json())
+        .then(projects => {
+            // Limpiar el contenedor
+            projectsGrid.innerHTML = '';
+            
+            // Ya no necesitamos filtros porque solo hay un proyecto
+            loadProjects(projects);
+            
+            // Crear el modal para la galería de stickers
+            createStickersGallery();
+        })
+        .catch(error => {
+            console.error('Error al cargar los proyectos:', error);
+            // Fallback a datos hardcodeados en caso de error
+            const projects = [
+                {
+                    title: 'Stickers',
+                    description: 'Colección de stickers de arte urbano con diseños originales y estilo graffiti.',
+                    image: 'images/Stickers Tanda 2/portada.jpg',
+                    category: 'arte-urbano',
+                    link: '#stickers-gallery'
+                }
+            ];
+            projectsGrid.innerHTML = '';
+            loadProjects(projects);
+            createStickersGallery();
+        });
+    }
 }
 
 function loadProjects(projectsToLoad) {
