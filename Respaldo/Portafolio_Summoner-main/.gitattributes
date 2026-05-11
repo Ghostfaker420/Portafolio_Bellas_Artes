@@ -1,0 +1,4 @@
+# Auto detect text files and perform LF normalization.
+* text=auto eol=lf
+*.{js,html,css,scss,json,md,txt,xml,yaml,yml} text eol=lf
+*.{png,jpeg,jpg,gif,ico,svg,webp,eot,ttf,woff,woff2,otf} binary

@@ -1,0 +1,157 @@
+.gallery-collection {
+    padding: 2rem 0;
+}
+
+.animations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Autorretratos */
+.portraits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Carteles - Más espacio para más imágenes */
+.posters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    /* max-width and margin removed for auto-fit flexibility */
+}
+
+/* Diseño de Personaje */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Ilustraciones */
+.illustrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    /* max-width and margin removed for auto-fit flexibility */
+}
+
+/* Letras */
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Pokémon */
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Stickers */
+.stickers-grid { /* Asumiendo este nombre de clase basado en el patrón */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.portrait-item,
+.animation-item,
+.poster-item,
+.character-item,
+.illustration-item,
+.letter-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 1/1;
+}
+
+.portrait-item img,
+.animation-item img,
+.poster-item img,
+.character-item img,
+.illustration-item img,
+.letter-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.portrait-item:hover,
+.animation-item:hover,
+.poster-item:hover,
+.character-item:hover,
+.illustration-item:hover,
+.letter-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Diseño mosaico responsivo */
+@media (min-width: 768px) {
+    .portraits-grid,
+    .animations-grid,
+    .posters-grid,
+    .characters-grid,
+    .illustrations-grid,
+    .letters-grid {
+        /* grid-template-columns: repeat(3, 1fr); /* Removed, auto-fit handles this */ */
+        grid-auto-rows: 1fr;
+    }
+
+    .portrait-item,
+    .animation-item,
+    .poster-item,
+    .character-item,
+    .illustration-item,
+    .letter-item {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    /* Removed rule for :first-child to ensure uniform item sizes
+    .portrait-item:first-child,
+    .animation-item:first-child,
+    .poster-item:first-child,
+    .character-item:first-child,
+    .illustration-item:first-child,
+    .letter-item:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    } 
+    */
+}
+
+@media (max-width: 767px) {
+    .portraits-grid,
+    .animations-grid,
+    .posters-grid,
+    .characters-grid,
+    .illustrations-grid,
+    .letters-grid {
+        /* grid-template-columns: repeat(2, 1fr); /* Removed, auto-fit handles this */ */
+    }
+}
+
+@media (max-width: 480px) {
+    .portraits-grid,
+    .animations-grid,
+    .posters-grid,
+    .characters-grid,
+    .illustrations-grid,
+    .letters-grid {
+        /* grid-template-columns: 1fr; /* Removed, auto-fit handles this */ */
+    }
+}
