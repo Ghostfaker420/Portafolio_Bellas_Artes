@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initPageLoader();
     initUrbanEffects(); // Nuevos efectos urbanos
+    
+    // Prevenir inicialización múltiple
+    window.removeEventListener('DOMContentLoaded', arguments.callee);
 });
 
 // Efectos urbanos adicionales
@@ -123,25 +126,24 @@ function initNavigation() {
         });
     });
 
-    // Scroll suave a las secciones
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+// Scroll suave a las secciones (evitando enlaces vacíos)
+const scrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+scrollLinks.forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (targetElement) {
+            const headerHeight = header.offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerHeight = header.offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
+});
 
     // Resaltar enlace activo en la navegación
     const sections = document.querySelectorAll('section[id]');

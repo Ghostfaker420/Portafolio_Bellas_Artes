@@ -11,8 +11,7 @@ const projects = [
         description: 'Descripción del proyecto 2',
         image: 'images/project2.jpg',
         link: '#'
-    },
-    // Agrega más proyectos según necesites
+    }
 ];
 
 // Datos de ejemplo para tours 360°
@@ -25,17 +24,7 @@ const tours = [
             { pitch: 0, yaw: 0, text: 'Punto de interés 1' },
             { pitch: 10, yaw: 90, text: 'Punto de interés 2' }
         ]
-    },
-    {
-        title: 'Tour Virtual 2',
-        description: 'Descripción del tour virtual 2',
-        panorama: 'images/tour2.jpg',
-        hotspots: [
-            { pitch: -10, yaw: 180, text: 'Punto de interés 1' },
-            { pitch: 5, yaw: 270, text: 'Punto de interés 2' }
-        ]
     }
-    // Agrega más tours según necesites
 ];
 
 // Inicializar el visor 360° con optimizaciones para mayor estabilidad
@@ -305,51 +294,56 @@ function makeViewerResponsive() {
     });
 }
 
-// Inicializar la página
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Documento cargado, esperando a que las bibliotecas se inicialicen...");
-    
-    // Configurar menú móvil
-    setupMobileMenu();
-    
-    // Hacer que el visor sea responsivo
-    makeViewerResponsive();
-    
-    // Esperar un momento para asegurar que las bibliotecas estén disponibles
-    setTimeout(function() {
-        console.log("Iniciando la aplicación...");
-        loadProjects();
-        loadTours();
-        initViewer();
-    }, 500); // Esperar 500ms
-
-    // Código para ocultar/mostrar el header al hacer scroll
-    const header = document.querySelector('header');
-    let lastScrollTop = 0;
-    let scrollTimeout;
-    const scrollThreshold = 30; // Umbral de scroll para activar la animación
-    const scrollDelay = 150; // Retraso para evitar cambios bruscos
-
-    window.addEventListener('scroll', function() {
-        // Cancelar el timeout anterior si existe
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
+    // Inicializar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Documento cargado, esperando a que las bibliotecas se inicialicen...");
         
-        // Establecer un nuevo timeout para suavizar la detección
-        scrollTimeout = setTimeout(function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Determinar la dirección del scroll con un umbral más pequeño
-            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-                // Scroll hacia abajo
-                header.classList.add('hide');
-            } else {
-                // Scroll hacia arriba
-                header.classList.remove('hide');
+        // Configurar menú móvil
+        setupMobileMenu();
+        
+        // Hacer que el visor sea responsivo
+        makeViewerResponsive();
+        
+        // Configurar ocultar/mostrar header al hacer scroll
+        setupHeaderScroll();
+        
+        // Esperar un momento para asegurar que las bibliotecas estén disponibles
+        setTimeout(function() {
+            console.log("Iniciando la aplicación...");
+            loadProjects();
+            loadTours();
+            initViewer();
+        }, 500); // Esperar 500ms
+
+    // Función para ocultar/mostrar el header al hacer scroll
+    function setupHeaderScroll() {
+        const header = document.querySelector('header');
+        let lastScrollTop = 0;
+        let scrollTimeout;
+        const scrollThreshold = 30; // Umbral de scroll para activar la animación
+        const scrollDelay = 150; // Retraso para evitar cambios bruscos
+
+        window.addEventListener('scroll', function() {
+            // Cancelar el timeout anterior si existe
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
             }
             
-            lastScrollTop = scrollTop;
-        }, scrollDelay);
-    });
+            // Establecer un nuevo timeout para suavizar la detección
+            scrollTimeout = setTimeout(function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Determinar la dirección del scroll con un umbral más pequeño
+                if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                    // Scroll hacia abajo
+                    header.classList.add('hide');
+                } else {
+                    // Scroll hacia arriba
+                    header.classList.remove('hide');
+                }
+                
+                lastScrollTop = scrollTop;
+            }, scrollDelay);
+        });
+    }
 });
