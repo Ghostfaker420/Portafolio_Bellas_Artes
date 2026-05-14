@@ -16,41 +16,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
     
-    <!-- Fuentes con display swap para mejor rendimiento -->
+    <!-- Fuentes con display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Estilos críticos primero -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/optimized.css">
-    
-    <!-- Estilos no críticos con carga diferida -->
-    <link rel="stylesheet" href="css/modern-styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/stable-effects.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/urban-style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/gallery-styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/gallery-matrix.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/cv-styles.css" media="print" onload="this.media='all'">
-
-    <link rel="stylesheet" href="css/enhanced-ui.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Estilos consolidados -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/LOGO.svg" type="image/x-icon">
-    
-    <!-- Fallback para navegadores que no soportan JavaScript -->
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/modern-styles.css">
-        <link rel="stylesheet" href="css/stable-effects.css">
-        <link rel="stylesheet" href="css/urban-style.css">
-        <link rel="stylesheet" href="css/gallery-styles.css">
-        <link rel="stylesheet" href="css/cv-styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </noscript>
 </head>
 <body>
     <!-- Skip link para accesibilidad -->
@@ -97,7 +73,49 @@
 
         <section id="sobre-mi" class="about reveal scroll-section" aria-labelledby="sobre-mi-titulo">
             <h2 id="sobre-mi-titulo" class="rotate-in">Sobre Mí</h2>
-
+            <div class="about-content">
+                <div class="about-text urban-texture">
+                    <p>Soy un diseñador interactivo y artista urbano apasionado por crear experiencias que combinan lo digital con lo callejero. Mi enfoque fusiona el diseño centrado en el usuario con la expresión artística urbana, creando interfaces y espacios que rompen barreras entre lo virtual y lo físico.</p>
+                    <p>Con experiencia en diseño web, modelado 3D, fotografía 360°, <strong>graffiti e intervenciones urbanas</strong>, ofrezco soluciones creativas que desafían lo convencional. Mi objetivo es transformar ideas en experiencias visuales impactantes que conecten con las personas y el entorno urbano.</p>
+                </div>
+                <div class="skills">
+                    <h3 id="habilidades-titulo" class="text-gradient">Habilidades</h3>
+                    <div class="skills-grid cascade-container animate" aria-labelledby="habilidades-titulo">
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-cube glow-effect" aria-hidden="true"></i>
+                            <h4>Diseño 3D</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-camera glow-effect" aria-hidden="true"></i>
+                            <h4>Fotografía 360°</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-code glow-effect" aria-hidden="true"></i>
+                            <h4>Desarrollo Web</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-spray-can glow-effect" aria-hidden="true"></i>
+                            <h4>Graffiti</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-city glow-effect" aria-hidden="true"></i>
+                            <h4>Arte Urbano</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-paint-brush glow-effect" aria-hidden="true"></i>
+                            <h4>Diseño UI/UX</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-video glow-effect" aria-hidden="true"></i>
+                            <h4>Edición de Video</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-vr-cardboard glow-effect" aria-hidden="true"></i>
+                            <h4>Realidad Virtual</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="curriculum" class="curriculum reveal scroll-section" aria-labelledby="curriculum-titulo">
@@ -176,50 +194,9 @@
             </div>
         </section>
 
-        <section id="sobre-mi" class="about reveal scroll-section" aria-labelledby="sobre-mi-titulo">
-            <h2 id="sobre-mi-titulo" class="rotate-in">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text urban-texture">
-                    <p>Soy un diseñador interactivo y artista urbano apasionado por crear experiencias que combinan lo digital con lo callejero. Mi enfoque fusiona el diseño centrado en el usuario con la expresión artística urbana, creando interfaces y espacios que rompen barreras entre lo virtual y lo físico.</p>
-                    <p>Con experiencia en diseño web, modelado 3D, fotografía 360°, <strong>graffiti e intervenciones urbanas</strong>, ofrezco soluciones creativas que desafían lo convencional. Mi objetivo es transformar ideas en experiencias visuales impactantes que conecten con las personas y el entorno urbano.</p>
-                </div>
-                <div class="skills">
-                    <h3 id="habilidades-titulo" class="text-gradient">Habilidades</h3>
-                    <div class="skills-grid cascade-container animate" aria-labelledby="habilidades-titulo">
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-cube glow-effect" aria-hidden="true"></i>
-                            <h4>Diseño 3D</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-camera glow-effect" aria-hidden="true"></i>
-                            <h4>Fotografía 360°</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-code glow-effect" aria-hidden="true"></i>
-                            <h4>Desarrollo Web</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-spray-can glow-effect" aria-hidden="true"></i>
-                            <h4>Graffiti</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-city glow-effect" aria-hidden="true"></i>
-                            <h4>Arte Urbano</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-paint-brush glow-effect" aria-hidden="true"></i>
-                            <h4>Diseño UI/UX</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-video glow-effect" aria-hidden="true"></i>
-                            <h4>Edición de Video</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-vr-cardboard glow-effect" aria-hidden="true"></i>
-                            <h4>Realidad Virtual</h4>
-                        </div>
-                    </div>
-                </div>
+        <section id="proyectos" class="projects reveal scroll-section" aria-labelledby="proyectos-titulo">
+            <h2 id="proyectos-titulo" class="rotate-in">Proyectos</h2>
+            <div class="projects-grid" role="list">
             </div>
         </section>
 
@@ -457,17 +434,7 @@
         </div>
     </footer>
 
-    <!-- Scripts críticos con defer para mejor rendimiento -->
-
-    
-    <!-- Scripts de la aplicación -->
-    <script src="js/main.js" defer></script>
-    <script src="js/interactive.js" defer></script>
-    <script src="js/gallery.js" defer></script>
-    <script src="js/gallery-tabs.js" defer></script>
-    <script src="js/performance.js" defer></script>
-
-    <!-- Scroll Reveal para animaciones -->
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+    <!-- Script consolidado de la aplicación -->
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
