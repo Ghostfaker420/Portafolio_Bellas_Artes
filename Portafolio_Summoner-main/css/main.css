@@ -698,7 +698,7 @@ section h2::after {
 .letters-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 2rem);
     padding: 1rem;
 }
 
@@ -714,6 +714,7 @@ section h2::after {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     cursor: pointer;
+    aspect-ratio: 4/3;
 }
 
 .portrait-item:hover,
@@ -731,7 +732,7 @@ section h2::after {
 .illustration-item img,
 .letter-item img {
     width: 100%;
-    height: 350px;
+    aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
