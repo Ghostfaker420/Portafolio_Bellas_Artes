@@ -195,35 +195,48 @@ function initScrollAnimations() {
 // ============================================
 
 function initProjectsGallery() {
-  const grid = document.querySelector('.projects-grid');
-  if (!grid) return;
+   const grid = document.querySelector('.projects-grid');
+   if (!grid) return;
 
-  grid.innerHTML = '';
-  projects.forEach((p) => {
-    const card = document.createElement('div');
-    card.className = 'project-card reveal';
-    card.innerHTML = `
-      <div class="project-img">
-        <img src="${p.image}" alt="${p.title}" loading="lazy">
-        <div class="project-overlay">
-          <div class="project-overlay-content">
-            <a href="${p.link}" class="project-link">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>${p.title}</h3>
-        <p>${p.description}</p>
-      </div>`;
-    grid.appendChild(card);
-  });
+   grid.innerHTML = '';
+   projects.forEach((p) => {
+     const card = document.createElement('div');
+     card.className = 'project-card reveal';
+     card.innerHTML = `
+       <div class="project-img">
+         <img src="${p.image}" alt="${p.title}" loading="lazy">
+         <div class="project-overlay">
+           <div class="project-overlay-content">
+             <a href="${p.link}" class="project-link">Ver detalles</a>
+           </div>
+         </div>
+       </div>
+       <div class="project-content">
+         <h3>${p.title}</h3>
+         <p>${p.description}</p>
+       </div>`;
+     grid.appendChild(card);
+   });
 
-  requestAnimationFrame(() => {
-    grid.querySelectorAll('.reveal').forEach((c) => c.classList.add('active'));
-  });
+   requestAnimationFrame(() => {
+     grid.querySelectorAll('.reveal').forEach((c) => c.classList.add('active'));
+   });
 
-  createStickersModal();
-}
+   createStickersModal();
+   
+   // Ensure click event listener is properly attached for the project link
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('.project-link');
+  if (link && link.getAttribute('href') === '#stickers-gallery') {
+    e.preventDefault();
+    const modal = document.getElementById('stickers-gallery');
+    if (modal) {
+      modal.style.display = 'block';
+      loadStickers();
+    }
+  }
+});
+ }
 
 function createStickersModal() {
   let modal = document.getElementById('stickers-gallery');
@@ -254,24 +267,41 @@ function createStickersModal() {
 }
 
 function loadStickers() {
-  const container = document.querySelector('.stickers-container');
-  if (!container) return;
-  container.innerHTML = '';
+   const container = document.querySelector('.stickers-container');
+   if (!container) return;
+   container.innerHTML = '';
 
-  const images = [
-    'IMG_1723.PNG', 'IMG_1724.PNG', 'IMG_1725.PNG', 'IMG_1726.PNG',
-    'IMG_1727.PNG', 'IMG_1728.PNG',
-  ];
+   // Load stickers from both tandas
+   const tanda1Images = [
+     'IMG_1723.PNG', 'IMG_1724.PNG', 'IMG_1725.PNG', 'IMG_1726.PNG',
+     'IMG_1727.PNG', 'IMG_1728.PNG',
+   ];
+   
+   const tanda2Images = [
+     'IMG_1781.PNG', 'IMG_1782.PNG', 'IMG_1783.PNG', 'IMG_1784.PNG',
+     'IMG_1786.PNG', 'IMG_1787.PNG',
+   ];
 
-  images.forEach((img) => {
-    const item = document.createElement('div');
-    item.className = 'sticker-item';
-    const src = `images/Stickers Tanda 1/${img}`;
-    item.innerHTML = `<img src="${src}" alt="Sticker" loading="lazy">`;
-    item.addEventListener('click', () => openFullImage(src));
-    container.appendChild(item);
-  });
-}
+   // Load Tanda 1 stickers
+   tanda1Images.forEach((img) => {
+     const item = document.createElement('div');
+     item.className = 'sticker-item';
+     const src = `images/Stickers Tanda 1/${img}`;
+     item.innerHTML = `<img src="${src}" alt="Sticker" loading="lazy">`;
+     item.addEventListener('click', () => openFullImage(src));
+     container.appendChild(item);
+   });
+
+   // Load Tanda 2 stickers
+   tanda2Images.forEach((img) => {
+     const item = document.createElement('div');
+     item.className = 'sticker-item';
+     const src = `images/Sticker Tanda 2/${img}`;
+     item.innerHTML = `<img src="${src}" alt="Sticker" loading="lazy">`;
+     item.addEventListener('click', () => openFullImage(src));
+     container.appendChild(item);
+   });
+ }
 
 function openFullImage(src) {
   const view = document.createElement('div');
