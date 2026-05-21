@@ -401,42 +401,69 @@ function initTourViewer() {
 // ============================================
 
 function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
+   const form = document.getElementById('contactForm');
+   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name')?.trim();
-    const email = data.get('email')?.trim();
-    const message = data.get('message')?.trim();
+   form.addEventListener('submit', (e) => {
+     e.preventDefault();
+     const data = new FormData(form);
+     const name = data.get('name')?.trim();
+     const email = data.get('email')?.trim();
+     const message = data.get('message')?.trim();
 
-    if (!name || !email || !message) return;
+     // Validate
+     let valid = true;
+     const nameInput = document.getElementById('name');
+     const emailInput = document.getElementById('email');
+     const messageInput = document.getElementById('message');
 
-    const notification = document.createElement('div');
-    notification.className = 'notification success';
-    notification.innerHTML = `
-      <div class="notification-content">
-        <i class="fas fa-check-circle"></i>
-        <p>¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.</p>
-      </div>
-      <button class="notification-close"><i class="fas fa-times"></i></button>`;
-    document.body.appendChild(notification);
+     // Clear previous errors
+     clearError(nameInput);
+     clearError(emailInput);
+     clearError(messageInput);
 
-    requestAnimationFrame(() => notification.classList.add('show'));
-    setTimeout(() => {
-      notification.classList.remove('show');
-      setTimeout(() => notification.remove(), 500);
-    }, 5000);
+     if (!nameInput.value.trim()) {
+       showError(nameInput, 'Por favor, introduce tu nombre');
+       valid = false;
+     }
+     if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+       showError(emailInput, 'Por favor, introduce un email válido');
+       valid = false;
+     }
+     if (!messageInput.value.trim()) {
+       showError(messageInput, 'Por favor, introduce tu mensaje');
+       valid = false;
+     }
 
-    notification.querySelector('.notification-close').addEventListener('click', () => {
-      notification.classList.remove('show');
-      setTimeout(() => notification.remove(), 500);
-    });
+     if (!valid) {
+       return; // Stop if validation fails
+     }
 
-    form.reset();
-  });
-}
+     // Show success notification
+     const notification = document.createElement('div');
+     notification.className = 'notification success';
+     notification.innerHTML = `
+       <div class="notification-content">
+         <i class="fas fa-check-circle"></i>
+         <p>¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.</p>
+       </div>
+       <button class="notification-close"><i class="fas fa-times"></i></button>`;
+     document.body.appendChild(notification);
+
+     requestAnimationFrame(() => notification.classList.add('show'));
+     setTimeout(() => {
+       notification.classList.remove('show');
+       setTimeout(() => notification.remove(), 500);
+     }, 5000);
+
+     notification.querySelector('.notification-close').addEventListener('click', () => {
+       notification.classList.remove('show');
+       setTimeout(() => notification.remove(), 500);
+     });
+
+     form.reset();
+   });
+ }
 
 // ============================================
 // Validación de Formulario
