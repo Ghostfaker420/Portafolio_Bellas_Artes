@@ -44,18 +44,17 @@ let currentPanorama = null;
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  initPageLoader();
-  initNavigation();
-  initScrollAnimations();
-  initProjectsGallery();
-  initTourViewer();
-  initContactForm();
-  initGalleryTabs();
-  initLazyLoading();
-  initAccessibility();
-  initCustomCursor();
-  initFormValidation();
-  setupMobileMenu();
+   initPageLoader();
+   initNavigation();
+   initScrollAnimations();
+   initProjectsGallery();
+   initTourViewer();
+   initGalleryTabs();
+   initLazyLoading();
+   initAccessibility();
+   initCustomCursor();
+   initFormValidation();
+   setupMobileMenu();
 });
 
 // ============================================
