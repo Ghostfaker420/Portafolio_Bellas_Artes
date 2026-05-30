@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e85e27">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Portafolio de diseñador interactivo — proyectos, curriculum y tours virtuales 360°">
+    <meta name="author" content="Diseñador Interactivo">
+    <meta name="keywords" content="diseño interactivo, portafolio, tours 360, diseño web, experiencia de usuario">
+    <meta name="robots" content="index, follow">
+    <title>Portafolio · Diseñador Interactivo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Cargando...</div>
+        </div>
+    </div>
+
+    <header role="banner">
+        <nav aria-label="Navegación principal">
+            <div class="logo">
+                <span class="logo-text">&lt;DI/&gt;</span>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#curriculum">Currículum</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" role="main">
+        <!-- ============ INICIO ============ -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1 class="text-gradient">Diseñador Interactivo</h1>
+                <p>Experiencias digitales inmersivas que conectan personas con tecnología</p>
+                <div class="hero-buttons cascade-container animate">
+                    <a href="#proyectos" class="btn-primary hover-lift cascade-item">Ver Proyectos</a>
+                    <a href="#contacto" class="btn-secondary hover-lift cascade-item">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>Desplázate</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- ============ SOBRE MÍ ============ -->
+        <section id="sobre-mi" class="about reveal" aria-labelledby="sobre-mi-titulo">
+            <h2 id="sobre-mi-titulo">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy un diseñador interactivo apasionado por crear experiencias digitales que combinan estética, funcionalidad y tecnología. Mi enfoque se centra en el usuario, buscando siempre soluciones intuitivas y visualmente impactantes.</p>
+                    <p>Con experiencia en diseño de interfaces, prototipado interactivo, modelado 3D y fotografía 360°, transformo ideas en productos digitales que conectan con las personas. Cada proyecto es una oportunidad para explorar nuevas formas de interacción y narrativa visual.</p>
+                </div>
+                <div class="skills">
+                    <h3 class="text-gradient">Habilidades</h3>
+                    <div class="skills-grid cascade-container animate" aria-label="Habilidades profesionales">
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-desktop" aria-hidden="true"></i>
+                            <h4>Diseño UI/UX</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-cube" aria-hidden="true"></i>
+                            <h4>Modelado 3D</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <h4>Desarrollo Web</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-camera" aria-hidden="true"></i>
+                            <h4>Fotografía 360°</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            <h4>Diseño Responsive</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-vr-cardboard" aria-hidden="true"></i>
+                            <h4>Realidad Virtual</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-film" aria-hidden="true"></i>
+                            <h4>Edición Audiovisual</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                            <h4>Identidad Visual</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CURRÍCULUM ============ -->
+        <section id="curriculum" class="curriculum reveal" aria-labelledby="curriculum-titulo">
+            <h2 id="curriculum-titulo">Currículum Vitae</h2>
+            <div class="cv-container">
+                <div class="cv-section education">
+                    <h3>Educación</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="date">2020 — 2024</div>
+                            <h4>Diseño Interactivo y Multimedia</h4>
+                            <p>Universidad de Diseño</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date">2018 — 2020</div>
+                            <h4>Técnico en Diseño Digital</h4>
+                            <p>Instituto de Artes Digitales</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-section experience">
+                    <h3>Experiencia Profesional</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="date">2022 — Presente</div>
+                            <h4>Diseñador Interactivo Senior</h4>
+                            <p>Estudio Creativo Digital</p>
+                            <ul>
+                                <li>Desarrollo de experiencias interactivas</li>
+                                <li>Diseño de interfaces de usuario</li>
+                                <li>Gestión de proyectos creativos</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date">2020 — 2022</div>
+                            <h4>Diseñador Freelance</h4>
+                            <p>Proyectos Independientes</p>
+                            <ul>
+                                <li>Creación de identidad visual</li>
+                                <li>Diseño web y prototipado</li>
+                                <li>Producción multimedia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-section certifications">
+                    <h3>Certificaciones</h3>
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Diseño UX/UI Avanzado</h4>
+                            <p>Google Design Certificate</p>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-award"></i>
+                            <h4>Desarrollo Web Full Stack</h4>
+                            <p>Platzi Master Program</p>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-medal"></i>
+                            <h4>Producción Multimedia</h4>
+                            <p>Adobe Certified Professional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-actions">
+                    <a href="#" class="btn-primary hover-lift" download="CV-Disenador.pdf">
+                        <i class="fas fa-download"></i> Descargar CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROYECTOS + TOURS 360 ============ -->
+        <section id="proyectos" class="reveal" aria-labelledby="proyectos-titulo">
+            <h2 id="proyectos-titulo">Proyectos</h2>
+
+            <div class="projects-grid" role="list"></div>
+
+            <div class="tours-section">
+                <h3 class="section-subtitle">Recorridos 360°</h3>
+                <div class="tour-layout">
+                    <div class="tour-viewer-container">
+                        <div id="pano" class="tour-viewer"></div>
+                        <div class="loading-indicator" style="display:none;"></div>
+                    </div>
+                    <div class="tours-list-container">
+                        <ul class="tours-list" role="list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ GALERÍA ============ -->
+        <section id="galeria" class="gallery-section" aria-labelledby="galeria-titulo">
+            <div class="container">
+                <h2 id="galeria-titulo">Galería</h2>
+                <div class="gallery-nav" role="tablist" aria-label="Categorías de la galería">
+                    <button class="gallery-tab active" role="tab" aria-selected="true" aria-controls="autorretratos" data-collection="autorretratos">Autorretratos</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" aria-controls="animaciones" data-collection="animaciones">Animaciones</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" aria-controls="carteles" data-collection="carteles">Carteles</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" aria-controls="personajes" data-collection="personajes">Personajes</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" aria-controls="ilustraciones" data-collection="ilustraciones">Ilustraciones</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" aria-controls="letras" data-collection="letras">Letras</button>
+                </div>
+
+                <div class="gallery-collection active" id="autorretratos" role="tabpanel">
+                    <div class="portraits-grid"></div>
+                </div>
+                <div class="gallery-collection" id="animaciones" role="tabpanel">
+                    <div class="animations-grid"></div>
+                </div>
+                <div class="gallery-collection" id="carteles" role="tabpanel">
+                    <div class="posters-grid"></div>
+                </div>
+                <div class="gallery-collection" id="personajes" role="tabpanel">
+                    <div class="characters-grid"></div>
+                </div>
+                <div class="gallery-collection" id="ilustraciones" role="tabpanel">
+                    <div class="illustrations-grid"></div>
+                </div>
+                <div class="gallery-collection" id="letras" role="tabpanel">
+                    <div class="letters-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACTO ============ -->
+        <section id="contacto" class="contact reveal" aria-labelledby="contacto-titulo">
+            <h2 id="contacto-titulo">Contacto</h2>
+            <div class="contact-form">
+                <form id="contactForm" class="cascade-container animate" novalidate>
+                    <div class="form-group cascade-item">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group cascade-item">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group cascade-item">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="hover-lift cascade-item">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">&lt;DI/&gt;</span>
+                <p>Diseñador interactivo especializado en experiencias digitales inmersivas. Transformando ideas en interacciones memorables.</p>
+                <div class="social-links" aria-label="Redes sociales">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Enlaces de pie de página">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#curriculum">Currículum</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <address>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:hola@midiseno.com">hola@midiseno.com</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+34123456789">+34 123 456 789</a></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Madrid, España</p>
+                </address>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Portafolio de Diseñador Interactivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
