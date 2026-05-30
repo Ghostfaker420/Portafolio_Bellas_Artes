@@ -337,6 +337,26 @@ header.scrolled .logo img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Focus visible styles for keyboard accessibility */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.gallery-tab:focus-visible,
+.mobile-menu-btn:focus-visible,
+.skip-link:focus-visible,
+#contactForm button:focus-visible,
+#contactForm input:focus-visible,
+#contactForm textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.25);
+}
+
+.skip-link:focus-visible {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+}
+
 /* --- 5. Section Base Styles --- */
 section {
     padding: 6rem 5%;
