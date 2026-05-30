@@ -5,23 +5,24 @@
 
 /* --- 1. Variables & Reset --- */
 :root {
-    --primary-color: #e85e27;
-    --primary-color-light: #ff7a40;
-    --primary-color-dark: #c94d1b;
-    --secondary-color: #cac5b8;
-    --accent-color: #3498db;
-    --urban-accent: #f1c40f;
-    --text-color: #f5f6fa;
-    --white: #fefcf0;
-    --dark-bg: rgba(26, 26, 26, 0.85);
-    --darker-bg: rgba(18, 18, 18, 0.95);
-
+    --primary-color: #03071E;
+    --primary-color-light: #D4D9FF;
+    --primary-color-dark: #02051A;
+    --secondary-color: #D4D9FF;
+    --accent-color: #E85D04;
+    --urban-accent: #9D0208;
+    --secondary-accent: #FFBA08;
+    --text-color: #FFFFFF;
+    --white: #FFFFFF;
+    --dark-bg: rgba(3, 7, 30, 0.85);
+    --darker-bg: rgba(3, 7, 30, 0.95);
+    
     --gradient-bg: linear-gradient(135deg, var(--primary-color-dark), var(--primary-color), var(--primary-color-light));
-    --urban-gradient: linear-gradient(135deg, var(--primary-color), #ff3019);
+    --urban-gradient: linear-gradient(135deg, var(--accent-color), var(--urban-accent));
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     --transition-smooth: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
     --transition-fast: transform 0.2s ease, opacity 0.2s ease;
-
+    
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -43,9 +44,9 @@ body {
     color: var(--text-color);
     background:
         linear-gradient(180deg,
-            rgba(18, 18, 18, 0.95) 0%,
-            rgba(26, 26, 26, 0.90) 40%,
-            rgba(232, 94, 39, 0.85) 100%
+            rgba(3, 7, 30, 0.95) 0%,
+            rgba(3, 7, 30, 0.90) 40%,
+            rgba(232, 93, 4, 0.85) 100%
         );
     background-attachment: fixed;
     font-weight: 400;
@@ -123,7 +124,7 @@ a, button {
 
 .loader-spinner {
     width: 50px; height: 50px;
-    border: 3px solid rgba(232, 94, 39, 0.3);
+    border: 3px solid rgba(232, 93, 4, 0.3);
     border-top-color: var(--primary-color);
     animation: spin 1s linear infinite;
     margin: 0 auto 1rem;
