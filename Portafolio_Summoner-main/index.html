@@ -28,9 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Fuentes con display swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+     <!-- Fuentes con display swap -->
+     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
     
     <!-- Estilos consolidados -->
     <link rel="stylesheet" href="css/main.css">
@@ -134,7 +133,11 @@
         </section>
 
         <section id="curriculum" class="curriculum reveal scroll-section" aria-labelledby="curriculum-titulo">
-            <h2 id="curriculum-titulo" class="rotate-in">Currículum Vitae</h2>
+            <div class="curriculum-section-bg" aria-hidden="true"></div>
+            <div class="cv-header">
+                <h2 id="curriculum-titulo" class="rotate-in">Currículum Vitae</h2>
+                <p class="cv-tagline">Diseñador Interactivo & Artista Urbano | Experiencia en lo Digital y lo Callejero</p>
+            </div>
             <div class="cv-container">
                 <div class="cv-section education">
                     <h3>Educación</h3>
@@ -200,14 +203,17 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="cv-actions">
                     <a href="#" class="btn-primary hover-lift" download="CV-Nombre.pdf">
-                        <i class="fas fa-download"></i> Descargar CV
+                        <i class="fas fa-download"></i> Descargar CV Completo
                     </a>
-                 </div>
-             </div>
-         </section>
+                    <a href="#" class="btn-secondary hover-lift" target="_blank">
+                        <i class="fas fa-link"></i> Ver Portfolio Digital
+                    </a>
+                </div>
+            </div>
+        </section>
              <h2 id="proyectos-titulo" class="rotate-in">Proyectos</h2>
              <div class="projects-grid" role="list">
              </div>

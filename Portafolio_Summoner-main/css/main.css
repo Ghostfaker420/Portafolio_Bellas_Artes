@@ -39,7 +39,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Big Shoulders', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background:
@@ -49,19 +49,19 @@ body {
             rgba(232, 93, 4, 0.85) 100%
         );
     background-attachment: fixed;
+}
     font-weight: 400;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rampart One', system-ui !important;
+    font-family: 'Big Shoulders', system-ui !important;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
 img {
@@ -131,7 +131,7 @@ a, button {
 }
 
 .loader-text {
-    font-family: 'Rampart One', system-ui;
+    font-family: 'Big Shoulders', system-ui;
     color: var(--primary-color);
     font-size: 1.2rem;
 }
@@ -371,6 +371,7 @@ section h2 {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
+    font-family: 'Big Shoulders', system-ui !important;
 }
 
 section h2::after {
@@ -402,6 +403,7 @@ section h2::after {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: var(--white);
+    font-family: 'Big Shoulders', system-ui;
 }
 
 .skills-grid {
@@ -441,9 +443,514 @@ section h2::after {
 }
 
 /* --- 7. Curriculum Section --- */
+.cv-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--dark-bg);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--urban-gradient);
+}
+
+.cv-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-family: 'Big Shoulders', system-ui;
+}
+
+.cv-header .cv-tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-style: italic;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
 .cv-container {
     display: grid;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    position: relative;
+}
+
+/* Urban timeline enhancements */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Urban texture - concrete-like pattern */
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px
+        ),
+        linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    background-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3.5rem;
+    padding: 0 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(232, 93, 4, 0.1);
+    animation: pulse 3s infinite;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: var(--white);
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    z-index: 2;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 4%;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-right: 4%;
+}
+
+.timeline-item .date {
+    background: var(--urban-gradient);
+    color: var(--white);
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+    font-family: 'Big Shoulders', system-ui;
+    letter-spacing: 0.5px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Urban texture for timeline items */
+.timeline-item:nth-child(odd) .date {
+    background: var(--gradient-bg);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item h4 {
+    color: var(--accent-color);
+    font-family: 'Big Shoulders', system-ui;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.timeline-item h4::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: var(--secondary-accent);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item h4::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 2px;
+    background: var(--accent-color);
+    opacity: 0.7;
+}
+
+.timeline-item:nth-child(even) h4::after {
+    left: -15px;
+    right: auto;
+    transform: translateY(-50%);
+}
+
+.timeline-item p {
+    color: var(--text-color);
+    opacity: 0.9;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    max-width: 400px;
+}
+
+.timeline-item ul {
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+.timeline-item ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1rem;
+}
+
+.timeline-item ul li::before {
+    content: '▣';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Subtle hover effect for timeline items */
+.timeline-item:hover::before {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 0 6px rgba(232, 93, 4, 0.2);
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(232, 93, 4, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(232, 93, 4, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(232, 93, 4, 0);
+    }
+}
+
+/* Certification enhancements */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.cert-item {
+    background: var(--dark-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.cert-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--urban-gradient);
+    transform: skewY(-15deg);
+    transform-origin: bottom left;
+}
+
+.cert-item::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.cert-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    border-color: var(--accent-color);
+}
+
+.cert-item:hover::after {
+    opacity: 0.15;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cert-item i {
+    font-size: 3rem;
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover i {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.cert-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+    font-family: 'Big Shoulders', system-ui;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-item p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Action buttons */
+.cv-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cv-actions .btn-primary,
+.cv-actions .btn-secondary {
+    flex: 1;
+    min-width: 220px;
+    max-width: 260px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-width: 3px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.85rem 1.5rem;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.cv-actions .btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.cv-actions .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.6s;
+}
+
+.cv-actions .btn-primary:hover::before {
+    left: 100%;
+}
+
+.cv-actions .btn-primary i {
+    margin-right: 0;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cv-actions .btn-primary:hover i {
+    transform: translateX(4px) scale(1.1);
+}
+
+.cv-actions .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.cv-actions .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: 0.6s;
+}
+
+.cv-actions .btn-secondary:hover::before {
+    left: 100%;
+}
+
+.cv-actions .btn-secondary i {
+    margin-right: 0;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cv-actions .btn-secondary:hover i {
+    transform: translateX(4px) scale(1.1);
+}
+
+/* Additional decorative elements for urban feel */
+.curriculum-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.curriculum-section-bg::before,
+.curriculum-section-bg::after {
+    content: '';
+    position: absolute;
+    background: var(--accent-color);
+    opacity: 0.05;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: -1;
+}
+
+.curriculum-section-bg::before {
+    top: -100px;
+    right: -100px;
+    animation: drift 15s ease-in-out infinite;
+}
+
+.curriculum-section-bg::after {
+    bottom: -150px;
+    left: -150px;
+    animation: drift 20s ease-in-out infinite reverse;
+}
+
+@keyframes drift {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(15deg);
+    }
+    66% {
+        transform: translate(-30px, 30px) rotate(-15deg);
+    }
 }
 
 .cv-section h3 {
@@ -537,7 +1044,7 @@ section h2::after {
 
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
 }
@@ -545,36 +1052,95 @@ section h2::after {
 .cert-item {
     background: var(--dark-bg);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
     transition: var(--transition-smooth);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--urban-gradient);
 }
 
 .cert-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-shadow);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
 }
 
 .cert-item i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    display: inline-block;
 }
 
 .cert-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
     color: var(--white);
+    font-family: 'Big Shoulders', system-ui;
+    letter-spacing: -0.5px;
 }
 
 .cert-item p {
-    font-size: 0.85rem;
-    opacity: 0.8;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    line-height: 1.4;
 }
 
 .cv-actions {
     margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cv-actions .btn-primary {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-actions .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.cv-actions .btn-primary:hover::before {
+    left: 100%;
+}
+
+.cv-actions .btn-primary i {
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cv-actions .btn-primary:hover i {
+    transform: translateX(3px);
 }
 
 /* --- 8. Projects Section --- */
@@ -832,7 +1398,7 @@ section h2::after {
     border-radius: 8px;
     color: var(--text-color);
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Big Shoulders', sans-serif;
     transition: var(--transition-smooth);
 }
 
