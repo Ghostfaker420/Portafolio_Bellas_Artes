@@ -1118,7 +1118,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== MOTION GRAPHICS ===== */
-.motion { background: var(--bg-primary); position: relative; }
+.motion { background: var(--bg-primary); position: relative; padding-top: 40px; }
 .motion::before {
   content: '';
   position: absolute;
@@ -1181,7 +1181,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== VIEWER 360 ===== */
-.viewer360 { background: var(--bg-secondary); position: relative; }
+.viewer360 { background: var(--bg-secondary); position: relative; padding-bottom: 80px; }
 .viewer360::before {
   content: '';
   position: absolute;
@@ -1740,6 +1740,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-card { padding: 28px 20px; }
 
+  .viewer360 { padding-bottom: 60px; }
+  .projects { padding-bottom: 60px; }
+  .gallery { padding-top: 30px; padding-bottom: 60px; }
+  .motion { padding-top: 30px; }
+
   .project-card-body { padding: 18px 20px 8px; gap: 8px; }
   .project-card-title { font-size: 1.25rem; }
   .project-card-software { padding: 10px 20px 0; gap: 14px; }
@@ -1765,6 +1770,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .hero-blob { width: 240px; height: 240px; }
   .hero-blob-shape { width: 140px; height: 140px; }
   .splatter-group { opacity: 0.1 !important; }
+
+  .viewer360 { padding-bottom: 50px; }
+  .projects { padding-bottom: 50px; }
+  .gallery { padding-top: 24px; padding-bottom: 50px; }
+  .motion { padding-top: 24px; }
 
   .project-card-body { padding: 14px 16px 6px; gap: 6px; }
   .project-card-title { font-size: 1.15rem; }
