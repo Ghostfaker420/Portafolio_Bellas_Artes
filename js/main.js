@@ -51,16 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#9D0208',
             img: 'assets/images/Iconografía/iconos.jpeg'
         },
-        {
-            title: 'Motion Graphics',
-            desc: 'Animación y gráficos en movimiento para campañas digitales y contenido audiovisual.',
-            tags: ['Motion Graphics', 'Animación', 'After Effects'],
-            software: ['After Effects', 'Premiere', 'Illustrator'],
-            color: '#9D0208',
-            img: 'assets/images/Motion.gif',
-            type: 'gif'
-        }
     ];
+
+    function swInitials(name) {
+        const p = name.split(/\s+/);
+        return p.length > 1 ? p.map(w => w[0]).join('').toUpperCase() : p[0].slice(0, 2).toUpperCase();
+    }
+
+    function swBadgeHTML(name) {
+        return `<span class="project-card-software-badge"><span class="sw-badge-square">${swInitials(name)}</span><span class="sw-badge-label">${name}</span></span>`;
+    }
 
     const projectsGrid = document.getElementById('projectsGrid');
 
@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.forEach((p, i) => {
             const card = document.createElement('article');
             card.className = 'project-card reveal-up';
-            card.style.transitionDelay = `${i * 0.1}s`;
             card.tabIndex = 0;
             card.role = 'button';
             card.addEventListener('keydown', (e) => {
@@ -79,24 +78,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            card.style.transitionDelay = `${i * 0.1}s`;
             card.innerHTML = `
                 <div class="project-card-img${p.type === 'gif' ? ' project-card-img--gif' : ''}">
                     ${p.img ? `<img src="${p.img}" alt="${p.title}" ${p.type === 'gif' ? '' : 'loading="lazy"'}>` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
                 </div>
                 <div class="project-card-body">
                     <h3 class="project-card-title">${p.title}</h3>
-                    <p class="project-card-desc">${p.desc}</p>
                     <div class="project-card-tags">
                         ${p.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('')}
-                    </div>
-                    <div class="project-card-software">
-                        ${p.software.map(s => `<span class="project-card-software-badge">${s}</span>`).join('')}
                     </div>
                 </div>
             `;
 
+            const wrapper = document.createElement('div');
+            wrapper.className = 'project-card-wrapper';
+
             card.addEventListener('click', () => openModal(p));
-            projectsGrid.appendChild(card);
+            wrapper.appendChild(card);
+
+            const swDiv = document.createElement('div');
+            swDiv.className = 'project-card-software';
+            swDiv.innerHTML = p.software.map(s => swBadgeHTML(s)).join('');
+            wrapper.appendChild(swDiv);
+
+            projectsGrid.appendChild(wrapper);
         });
     }
 
@@ -118,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (project.software) {
             const swRow = document.createElement('div');
             swRow.className = 'modal-software';
-            swRow.innerHTML = project.software.map(s => `<span class="project-card-software-badge">${s}</span>`).join('');
+            swRow.innerHTML = project.software.map(s => swBadgeHTML(s)).join('');
             modalTags.after(swRow);
         }
 
