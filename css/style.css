@@ -17,7 +17,7 @@
   --text-secondary: #8A92C0;
   --text-muted: #6A72A0;
   --font-display: 'Big Shoulders Display', 'Impact', sans-serif;
-  --font-body: 'Big Shoulders Display', 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Big Shoulders Display', sans-serif;
   --easing: cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.5s var(--easing);
   --transition-fast: 0.25s var(--easing);
@@ -100,9 +100,7 @@ img { max-width: 100%; display: block; }
   padding: 0 24px;
 }
 
-.section { padding: 120px 0; position: relative; content-visibility: auto; contain-intrinsic-size: 600px; }
-
-.section:first-child { content-visibility: visible; }
+.section { padding: 120px 0; position: relative; }
 
 .section-title {
   font-family: var(--font-display);
@@ -840,7 +838,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   overflow: hidden;
   background: var(--bg-card);
   line-height: 0;
-  aspect-ratio: 16 / 9;
 }
 
 .project-card-img::after {
@@ -857,8 +854,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 
 .project-card-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform 0.8s var(--easing), filter 0.6s var(--easing);
 }

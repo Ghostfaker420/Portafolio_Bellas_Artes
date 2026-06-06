@@ -54,8 +54,8 @@ class Viewer360 {
 
     resize() {
         const rect = this.stage.getBoundingClientRect();
-        const w = rect.width;
-        const h = rect.height;
+        const w = rect.width || 400;
+        const h = rect.height || 300;
         this.canvas.width = w * 2;
         this.canvas.height = h * 2;
         this.canvas.style.width = w + 'px';
