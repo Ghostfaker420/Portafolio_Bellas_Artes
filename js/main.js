@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Arte Urbano',
             desc: 'Dirección de arte y diseño de murales de gran formato con técnicas digitales y modelado 3D escultórico.',
             tags: ['Arte Urbano', 'Muralismo', 'Escultura Digital'],
-            software: ['Blender', 'Photoshop', 'Illustrator'],
+            software: ['Nomad Sculpt'],
             color: '#E85D04',
             img: 'assets/images/Arte urbano/kevin 1.PNG',
             secondaryImg: 'assets/images/Arte urbano/Kevin 2.PNG'
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Iconografia Vectoral',
             desc: 'Creación de sistemas de iconografía vectorial para plataformas digitales, con enfoque en consistencia visual y escalabilidad.',
             tags: ['Vectorial', 'Iconografía', 'Sistemas de Diseño'],
-            software: ['Illustrator', 'Figma', 'Photoshop'],
+            software: ['Illustrator', 'Photoshop'],
             color: '#9D0208',
             img: 'assets/images/Iconografía/iconos.jpeg'
         },
@@ -58,8 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return p.length > 1 ? p.map(w => w[0]).join('').toUpperCase() : p[0].slice(0, 2).toUpperCase();
     }
 
+    const softwareSVGs = {
+        'Illustrator': '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><path d="M50 180 80 70h30l30 110M60 130h55" fill="none" stroke="#9999FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="170" cy="85" r="8" fill="#9999FF"/><path d="M170 110v70" fill="none" stroke="#9999FF" stroke-width="12" stroke-linecap="round"/></svg>',
+        'Photoshop': '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><path d="M55 180V65h48c24 0 42 14 42 34s-18 32-42 32H55" fill="none" stroke="#9999FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M155 95c0-14 12-24 25-24s25 10 25 24c0 20-25 24-25 38" fill="none" stroke="#9999FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M180 145c0 14-12 24-25 24s-25-10-25-24" fill="none" stroke="#9999FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        'Nomad Sculpt': '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="100" r="50" fill="none" stroke="#9999FF" stroke-width="10"/><path d="M80 150h80l-25 40H105Z" fill="none" stroke="#9999FF" stroke-width="10" stroke-linejoin="round"/><path d="M105 88 120 70l15 18" fill="none" stroke="#9999FF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="95" r="8" fill="#9999FF"/></svg>'
+    };
+
     function swBadgeHTML(name) {
-        return `<span class="project-card-software-badge"><span class="sw-badge-square">${swInitials(name)}</span><span class="sw-badge-label">${name}</span></span>`;
+        const svg = softwareSVGs[name];
+        const content = svg || swInitials(name);
+        return `<span class="project-card-software-badge"><span class="sw-badge-square">${content}</span><span class="sw-badge-label">${name}</span></span>`;
     }
 
     const projectsGrid = document.getElementById('projectsGrid');
