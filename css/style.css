@@ -27,9 +27,7 @@
   --nav-height: 70px;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); overflow-x: hidden; width: 100%; }
-
-#page { overflow-x: hidden; width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -53,8 +51,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  width: 100%;
-  position: relative;
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(232, 93, 4, 0.15);
 }
@@ -781,7 +777,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== ABOUT ===== */
-.about { background: var(--bg-secondary); position: relative; }
+.about { background: var(--bg-secondary); position: relative; overflow-x: hidden; }
 .about::before {
   content: '';
   position: absolute;
@@ -862,7 +858,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== PROJECTS ===== */
-.projects { background: var(--bg-primary); position: relative; padding-bottom: 80px; }
+.projects { background: var(--bg-primary); position: relative; overflow-x: hidden; padding-bottom: 80px; }
 .projects::before {
   content: '';
   position: absolute;
@@ -1267,7 +1263,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== MOTION GRAPHICS ===== */
-.motion { background: var(--bg-primary); position: relative; padding-top: 40px; }
+.motion { background: var(--bg-primary); position: relative; overflow-x: hidden; padding-top: 40px; }
 .motion::before {
   content: '';
   position: absolute;
@@ -1419,7 +1415,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== GALLERY CAROUSEL ===== */
-.gallery { background: var(--bg-primary); position: relative; padding-top: 40px; padding-bottom: 80px; }
+.gallery { background: var(--bg-primary); position: relative; overflow-x: hidden; padding-top: 40px; padding-bottom: 80px; }
 .gallery::before {
   content: '';
   position: absolute;
@@ -1563,7 +1559,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== CONTACT ===== */
-.contact { background: var(--bg-primary); position: relative; }
+.contact { background: var(--bg-primary); position: relative; overflow-x: hidden; }
 .contact::before {
   content: '';
   position: absolute;
