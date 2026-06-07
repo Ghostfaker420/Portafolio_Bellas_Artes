@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transitionDelay = `${i * 0.1}s`;
             card.innerHTML = `
                 <div class="project-card-img${p.type === 'gif' ? ' project-card-img--gif' : ''}">
-                    ${p.img ? `<img src="${p.img}" alt="${p.title}" ${p.type === 'gif' ? '' : 'loading="lazy"'}>` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
+                    ${p.img ? `<img src="${p.img}" alt="${p.title}" width="800" height="500" ${p.type === 'gif' ? '' : 'loading="lazy"'}>` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
                 </div>
                 <div class="project-card-body">
                     <h3 class="project-card-title">${p.title}</h3>
@@ -121,6 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
         modalTitle.textContent = project.title;
         modalDesc.textContent = project.desc;
         modalTags.innerHTML = project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
+        const existingSw = modalTags.nextElementSibling;
+        if (existingSw && existingSw.classList.contains('modal-software')) {
+            existingSw.remove();
+        }
         if (project.software) {
             const swRow = document.createElement('div');
             swRow.className = 'modal-software';
@@ -232,16 +236,16 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('open');
     });
 
-    navLinkItems.forEach(link => {
+        navLinkItems.forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navLinks.classList.remove('open');
         });
     });
 
-    document.querySelectorAll('.social-link[href="#"]').forEach(link => {
-        link.addEventListener('click', (e) => e.preventDefault());
-    });
+
+
+
 
     // ==================== SCROLL REVEAL ====================
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-blur');
@@ -269,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 1; i <= 36; i++) {
             frameFiles.push(`assets/images/360/1/100${String(i).padStart(2, '0')}.png`);
         }
-        const viewer = new Viewer360('viewerContainer', {
+        new Viewer360('viewerContainer', {
             totalFrames: 36,
             framesPerRow: 6,
             frameFiles: frameFiles

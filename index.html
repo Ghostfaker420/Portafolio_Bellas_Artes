@@ -20,7 +20,7 @@
 <body>
     <a href="#hero" class="skip-link">Saltar al contenido principal</a>
 
-    <div id="page">
+    <main id="page">
 
     <!-- ===== SPRAY TEXTURE OVERLAY ===== -->
     <svg class="noise-svg" aria-hidden="true">
@@ -107,6 +107,8 @@
 
     <!-- ===== ABOUT ===== -->
     <section class="about section" id="about">
+        <div class="spray-ring spray-ring--1" aria-hidden="true"></div>
+        <div class="spray-ring spray-ring--2" aria-hidden="true"></div>
         <div class="container">
             <h2 class="section-title reveal-up">Sobre <span class="accent">mí</span></h2>
             <div class="about-grid">
@@ -134,56 +136,83 @@
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">Tipografía</span>
                         <span class="skill-tag">UX/UI</span>
+                        <span class="skill-tag">Touch Designer</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WAVE DIVIDER ===== -->
-    <div class="wave-divider" style="background: var(--bg-secondary);">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" style="fill: var(--bg-primary)"/>
-        </svg>
-    </div>
-
-    <!-- ===== VIEWER 360 ===== -->
-    <section class="viewer360 section" id="viewer360">
-        <div class="container">
-            <h2 class="section-title reveal-up">Modelado y Animación <span class="accent">3D</span></h2>
-            <div class="viewer-container reveal-up" id="viewerContainer">
-                <div class="viewer-stage" id="viewerStage" tabindex="0" role="application" aria-label="Visor 360° de objeto 3D">
-                    <canvas id="viewerCanvas"></canvas>
-                    <div class="viewer-placeholder" id="viewerPlaceholder">
-                        <span>Cargando spritesheet…</span>
-                    </div>
-                </div>
-                <div class="viewer-controls">
-                    <button class="viewer-btn" id="viewerAutoRotate" title="Auto-rotar">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M21 3v5h-5"/></svg>
-                        Auto
-                    </button>
-                    <input type="range" class="viewer-slider" id="viewerSlider" min="0" max="35" value="0" aria-label="Control de secuencia 360°">
-                    <button class="viewer-btn" id="viewerReset" title="Reiniciar vista">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                        Reset
-                    </button>
-                    <span class="viewer-angle" id="viewerAngle">0°</span>
-                </div>
-            </div>
-            <p class="viewer-instructions">Arrastra o desliza para girar 360°</p>
-            <div class="viewer-software">
-                <span class="project-card-software-badge"><span class="sw-badge-square">BL</span><span class="sw-badge-label">Blender</span></span>
-                <span class="project-card-software-badge"><span class="sw-badge-square">PS</span><span class="sw-badge-label">Photoshop</span></span>
-                <span class="project-card-software-badge"><span class="sw-badge-square">AI</span><span class="sw-badge-label">Illustrator</span></span>
             </div>
         </div>
     </section>
 
     <!-- ===== PROJECTS ===== -->
     <section class="projects section" id="projects">
+        <div class="spray-ring spray-ring--3" aria-hidden="true"></div>
         <div class="container">
             <h2 class="section-title reveal-up">Proyectos <span class="accent">Destacados</span></h2>
+            <div class="project-card-wrapper project-card-wrapper--max reveal-up">
+                <div class="project-card project-card--static">
+                    <div class="project-card-img project-card-img--viewer">
+                        <div class="viewer-container" id="viewerContainer">
+                            <div class="viewer-stage" id="viewerStage" tabindex="0" role="application" aria-label="Visor 360° de objeto 3D">
+                                <canvas id="viewerCanvas"></canvas>
+                                <div class="viewer-placeholder" id="viewerPlaceholder">
+                                    <span>Cargando spritesheet…</span>
+                                </div>
+                                <p class="viewer-instructions">Arrastra o desliza para girar 360°</p>
+                            </div>
+                            <div class="viewer-controls">
+                                <button class="viewer-btn" id="viewerAutoRotate" title="Auto-rotar">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M21 3v5h-5"/></svg>
+                                    Auto
+                                </button>
+                                <input type="range" class="viewer-slider" id="viewerSlider" min="0" max="35" value="0" aria-label="Control de secuencia 360°">
+                                <button class="viewer-btn" id="viewerReset" title="Reiniciar vista">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                                    Reset
+                                </button>
+                                <span class="viewer-angle" id="viewerAngle">0°</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Modelado y Animación <span class="accent">3D</span></h3>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Modelado 3D</span>
+                            <span class="project-card-tag">Animación</span>
+                            <span class="project-card-tag">Render</span>
+                        </div>
+                        <p class="project-card-desc project-card-desc--visible">Diseño, modelado y texturizado de proyectos en 3 dimensiones.</p>
+                    </div>
+                </div>
+                <div class="project-card-software">
+                    <span class="project-card-software-badge">
+                        <span class="sw-badge-square">
+                            <svg viewBox="0.499 48.118 511.002 415.763" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <path d="M510.003 279.642c-2.998-21.097-10.305-41.104-21.725-59.459-9.959-16.019-22.738-30.266-37.991-42.375l.041-.038L290.133 54.731a4.569 4.569 0 0 0-.361-.287c-5.326-4.08-12.537-6.325-20.297-6.325-7.77 0-15.263 2.25-21.088 6.338-6.263 4.375-9.843 10.18-10.093 16.359-.229 5.765 2.521 11.312 7.764 15.636 10.31 8.135 20.597 16.447 30.898 24.769 9.997 8.08 20.298 16.401 30.549 24.502l-196.213-.133c-22.439 0-37.718 10.537-40.861 28.178-1.381 7.727 1.056 16.223 6.504 22.73 5.78 6.898 14.172 10.703 23.629 10.703l14.958.01c20.664 0 41.419-.051 62.146-.101l19.766-.046-178.08 131.748-.707.517C8.7 336.953 2.188 347.642.783 358.653c-1.065 8.342.881 15.965 5.63 22.053 5.66 7.258 14.497 11.25 24.885 11.25 10.205 0 20.618-3.867 29.334-10.908l96.166-78.7c-.411 3.843-.91 9.481-.853 13.573.108 6.479 2.188 19.479 5.481 30.033 6.804 21.69 18.265 41.535 34.063 58.963 16.438 18.132 36.458 32.509 59.5 42.722 24.36 10.774 50.547 16.243 77.836 16.243h.253c27.376-.066 53.646-5.622 78.085-16.519 23.08-10.334 43.091-24.769 59.467-42.898 15.778-17.517 27.223-37.395 34.014-59.067a151.124 151.124 0 0 0 6.416-33.003c.839-10.83.478-21.85-1.057-32.753zM334.82 383.601c-60.141 0-108.911-43.627-108.911-97.447 0-53.814 48.771-97.441 108.911-97.441 60.142 0 108.907 43.627 108.907 97.441.002 53.82-48.765 97.447-108.907 97.447zm62.807-106.01c.887 16.063-5.529 30.978-16.796 42.019-11.461 11.248-27.815 18.313-46.103 18.313-18.28 0-34.637-7.065-46.102-18.313-11.262-11.041-17.665-25.954-16.783-42.006.864-15.603 8.475-29.376 19.939-39.128 11.273-9.589 26.41-15.439 42.945-15.439 16.537 0 31.67 5.852 42.944 15.439 11.47 9.752 19.083 23.515 19.956 39.115z"/>
+                            </svg>
+                        </span>
+                        <span class="sw-badge-label">Blender</span>
+                    </span>
+                    <span class="project-card-software-badge">
+                        <span class="sw-badge-square">
+                            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M92.552 63.706c31.373 0 49.042 14.696 49.042 39.299 0 28.732-23.944 40.291-46.401 40.291H80.002v31.043H49.29V63.706h43.262zM80.002 89.96v27.081h13.54c9.413 0 16.017-3.798 16.017-13.375 0-8.752-5.614-13.706-15.357-13.706H80.002z" fill="#9999FF"/>
+                                <path d="M184.411 86.658c6.77 0 12.219.826 14.696 1.651v22.457c-1.982-.495-5.78-.826-8.917-.826-6.109 0-9.577.496-12.715 1.652V174.34h-28.896V93.923c10.402-4.623 20.806-7.265 35.832-7.265z" fill="#9999FF"/>
+                            </svg>
+                        </span>
+                        <span class="sw-badge-label">Premiere</span>
+                    </span>
+                    <span class="project-card-software-badge">
+                        <span class="sw-badge-square">
+                            <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M57.93 79.64s-8.48 2.54-11.87 5.94c-2.58 2.58-14.46 13.48-20.01 18.56-2.86 2.62-4.44 6.43-3.96 10.28.31 2.52 1.48 5.1 4.47 6.77 7.63 4.24 23.74 10.17 61.9 1.7 0 0-52.57-24.59-30.52-43.24Z" stroke-width="12"/>
+                                <path d="M84.21 74.46s44.09 4.13 44.09-1.38-9.64-8.27-14.47-8.27c-11.71 0-17.91 10.33-29.62 9.64Z" stroke-width="8"/>
+                                <path d="M141.87 68.62s12.72 16.96-.85 21.2-56.81-7.63-63.59.85c0 0-2.25 2.7 6.39 8.77 7.67 5.39 16.71 8.49 26.06 9.2 19.59 1.5 58.08 3.14 59.97-6.95 2.54-13.57-27.98-33.07-27.98-33.07Z" stroke-width="12"/>
+                            </svg>
+                        </span>
+                        <span class="sw-badge-label">Nomad Sculpt</span>
+                    </span>
+                </div>
+            </div>
             <div class="projects-grid" id="projectsGrid">
                 <!-- Cards injected via JS -->
             </div>
@@ -192,51 +221,69 @@
 
     <!-- ===== CARRUSEL PARA INSTAGRAM ===== -->
     <section class="gallery section" id="gallery">
+        <div class="spray-ring spray-ring--1" aria-hidden="true"></div>
         <div class="container">
-            <h2 class="section-title reveal-up">Carrusel para <span class="accent">Instagram</span></h2>
-            <div class="carousel-container reveal-up" id="carouselContainer" tabindex="-1">
-                <div class="carousel-viewport" id="carouselViewport">
-                    <div class="carousel-track" id="carouselTrack"></div>
+            <div class="project-card-wrapper reveal-up">
+                <div class="project-card project-card--static project-card--carousel">
+                    <div class="project-card-img project-card-img--carousel">
+                        <div class="carousel-container" id="carouselContainer" tabindex="-1">
+                            <div class="carousel-viewport" id="carouselViewport">
+                                <div class="carousel-track" id="carouselTrack"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">‹</button>
+                            <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">›</button>
+                            <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Navegación de diapositivas"></div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Carrusel para <span class="accent">Instagram</span></h3>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Diseño Gráfico</span>
+                            <span class="project-card-tag">Redes Sociales</span>
+                            <span class="project-card-tag">Branding</span>
+                        </div>
+                        <p class="project-card-desc project-card-desc--visible">Diseño de carruseles con identidad visual coherente y narrativa gráfica para campañas digitales.</p>
+                    </div>
                 </div>
-                <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">‹</button>
-                <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">›</button>
-                <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Navegación de diapositivas"></div>
-            </div>
-            <div class="carousel-software">
-                <span class="project-card-software-badge"><span class="sw-badge-square">PS</span><span class="sw-badge-label">Photoshop</span></span>
-                <span class="project-card-software-badge"><span class="sw-badge-square">AI</span><span class="sw-badge-label">Illustrator</span></span>
-                <span class="project-card-software-badge"><span class="sw-badge-square">FG</span><span class="sw-badge-label">Figma</span></span>
-                <span class="project-card-software-badge"><span class="sw-badge-square">ID</span><span class="sw-badge-label">InDesign</span></span>
+                <div class="project-card-software">
+                    <span class="project-card-software-badge"><span class="sw-badge-square">PS</span><span class="sw-badge-label">Photoshop</span></span>
+                    <span class="project-card-software-badge"><span class="sw-badge-square">AI</span><span class="sw-badge-label">Illustrator</span></span>
+                    <span class="project-card-software-badge"><span class="sw-badge-square">FG</span><span class="sw-badge-label">Figma</span></span>
+                    <span class="project-card-software-badge"><span class="sw-badge-square">ID</span><span class="sw-badge-label">InDesign</span></span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===== MOTION GRAPHICS ===== -->
     <section class="motion section" id="motion">
+        <div class="spray-ring spray-ring--2" aria-hidden="true"></div>
         <div class="container">
-            <h2 class="section-title reveal-up">Motion <span class="accent">Graphics</span></h2>
-            <div class="motion-content reveal-up">
-                <div class="motion-gif">
-                    <img src="assets/images/Motiom.GIF" alt="Motion Graphics" loading="lazy">
+            <div class="project-card-wrapper reveal-up">
+                <div class="project-card project-card--static">
+                    <div class="project-card-img project-card-img--gif">
+                        <img src="assets/images/Motiom.GIF" alt="Motion Graphics" width="820" height="500" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Motion <span class="accent">Graphics</span></h3>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Motion Graphics</span>
+                            <span class="project-card-tag">Animación</span>
+                            <span class="project-card-tag">After Effects</span>
+                        </div>
+                        <p class="project-card-desc project-card-desc--visible">Animación y gráficos en movimiento para campañas digitales y contenido audiovisual.</p>
+                    </div>
                 </div>
-                <div class="motion-info">
-                    <p class="motion-desc">Animación y gráficos en movimiento para campañas digitales y contenido audiovisual.</p>
-                    <div class="motion-tags">
-                        <span class="project-card-tag">Motion Graphics</span>
-                        <span class="project-card-tag">Animación</span>
-                        <span class="project-card-tag">After Effects</span>
-                    </div>
-                    <div class="motion-software">
-                        <span class="project-card-software-badge"><span class="sw-badge-square">AE</span><span class="sw-badge-label">After Effects</span></span>
-                        <span class="project-card-software-badge"><span class="sw-badge-square">PR</span><span class="sw-badge-label">Premiere</span></span>
-                        <span class="project-card-software-badge"><span class="sw-badge-square">AI</span><span class="sw-badge-label">Illustrator</span></span>
-                    </div>
+                <div class="project-card-software">
+                    <span class="project-card-software-badge"><span class="sw-badge-square">AE</span><span class="sw-badge-label">After Effects</span></span>
+                    <span class="project-card-software-badge"><span class="sw-badge-square">PR</span><span class="sw-badge-label">Premiere</span></span>
+                    <span class="project-card-software-badge"><span class="sw-badge-square">AI</span><span class="sw-badge-label">Illustrator</span></span>
                 </div>
             </div>
         </div>
     </section>
 
-    </div><!-- /#page -->
+    </main><!-- /#page -->
 
     <!-- ===== PROJECT MODAL ===== -->
     <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-label="Detalles del proyecto">
@@ -255,6 +302,7 @@
 
     <!-- ===== CONTACT ===== -->
     <section class="contact section" id="contact">
+        <div class="spray-ring spray-ring--3" aria-hidden="true"></div>
         <div class="container">
             <h2 class="section-title reveal-up">Contacto</h2>
             <div class="contact-content reveal-up">
