@@ -132,7 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalClose = document.getElementById('modalClose');
     const pageWrapper = document.getElementById('page');
 
+    let lastFocused = null;
+
     function openModal(project) {
+        lastFocused = document.activeElement;
         modalTitle.textContent = project.title;
         modalDesc.textContent = project.desc;
         modalTags.innerHTML = project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
@@ -183,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('open');
         document.body.style.overflow = '';
         if (pageWrapper) pageWrapper.removeAttribute('aria-hidden');
-        document.querySelector('.project-card')?.focus();
+        if (lastFocused) lastFocused.focus();
     }
 
     function trapFocus(e) {
@@ -216,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    const navOverlay = document.getElementById('navOverlay');
     const sections = document.querySelectorAll('.section[id]');
     const navLinkItems = document.querySelectorAll('.nav-link');
 
@@ -246,16 +250,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateNavbar, { passive: true });
 
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('open');
-    });
+    function toggleNav(open) {
+        const isOpen = open !== undefined ? open : !navLinks.classList.contains('open');
+        navToggle.classList.toggle('active', isOpen);
+        navLinks.classList.toggle('open', isOpen);
+        if (navOverlay) navOverlay.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
 
-        navLinkItems.forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('open');
-        });
+    navToggle.addEventListener('click', () => toggleNav());
+
+    if (navOverlay) navOverlay.addEventListener('click', () => toggleNav(false));
+
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => toggleNav(false));
     });
 
 
