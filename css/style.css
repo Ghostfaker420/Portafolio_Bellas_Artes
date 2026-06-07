@@ -1069,8 +1069,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   background: var(--bg-card);
 }
 
-.project-card-img--gif img {
-  object-fit: contain;
+.project-card-img--gif img,
+.project-card-img--gif video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .project-card--static {
@@ -1394,7 +1397,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 /* ===== MOTION GRAPHICS ===== */
-.motion { background: var(--bg-primary); position: relative; overflow-x: hidden; padding-top: 40px; }
+.motion { background: var(--bg-primary); position: relative; overflow-x: hidden; padding-top: 40px; padding-bottom: 60px; }
 .motion::before {
   content: '';
   position: absolute;
@@ -2038,7 +2041,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .skill-tag { padding: 6px 14px; font-size: 0.75rem; }
   .projects { padding-bottom: 40px; }
   .gallery { padding-top: 20px; padding-bottom: 40px; }
-  .motion { padding-top: 20px; }
+  .motion { padding-top: 20px; padding-bottom: 20px; }
 
   .project-card-body { padding: 14px 16px 6px; gap: 6px; }
   .project-card-title { font-size: 1.15rem; }
