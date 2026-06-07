@@ -1825,8 +1825,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .project-card-title { font-size: 1.25rem; }
   .project-card-software { padding: 10px 20px 0; gap: 14px; }
 
+  .viewer-container { max-width: 100%; }
   .viewer-controls { flex-wrap: wrap; gap: 10px; }
   .viewer-slider { max-width: 100%; flex-basis: 100%; order: -1; }
+  .viewer-btn { padding: 8px 14px; font-size: 0.75rem; }
+  .viewer-btn svg { width: 16px; height: 16px; }
+  .viewer-instructions { font-size: 0.7rem; padding: 8px 16px; }
 
   .carousel-btn {
     width: 34px;
@@ -1834,8 +1838,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
     font-size: 1.2rem;
   }
 
-  .carousel-prev { left: -44px; }
-  .carousel-next { right: -44px; }
+  .carousel-prev { left: 8px; }
+  .carousel-next { right: 8px; }
 
   .modal-overlay { padding: 16px; }
   .modal-content { max-height: 90vh; }
@@ -1866,8 +1870,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .project-card-title { font-size: 1.15rem; }
   .project-card-software { padding: 8px 16px 0; gap: 12px; }
 
-  .carousel-prev { left: 8px; }
-  .carousel-next { right: 8px; }
+  .viewer-container { max-width: 100%; }
+  .viewer-controls { gap: 8px; }
+  .viewer-btn { padding: 6px 12px; font-size: 0.7rem; }
+  .viewer-btn svg { width: 14px; height: 14px; }
+  .viewer-slider { height: 4px; }
+  .viewer-slider::-webkit-slider-thumb { width: 14px; height: 14px; }
+  .viewer-slider::-moz-range-thumb { width: 14px; height: 14px; }
+
   .carousel-slide { padding: 24px 16px; }
 
   .modal-overlay { padding: 12px; }
