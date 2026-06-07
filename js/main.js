@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ['Arte Urbano', 'Muralismo', 'Escultura Digital'],
             software: ['Nomad Sculpt'],
             color: '#E85D04',
-            img: 'assets/images/Arte urbano/kevin 1.PNG',
-            secondaryImg: 'assets/images/Arte urbano/Kevin 2.PNG'
+            img: 'assets/images/Arte urbano/kevin 1.webp',
+            secondaryImg: 'assets/images/Arte urbano/Kevin 2.webp'
         },
         {
             title: 'Iconografia Vectoral',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ['Iconografía', 'Vectores', 'Identidad de Marca'],
             software: ['Illustrator', 'Photoshop'],
             color: '#9D0208',
-            img: 'assets/images/Iconografía/iconos.jpeg'
+            img: 'assets/images/Iconografía/iconos.webp'
         },
     ];
 
@@ -282,61 +282,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => observer.observe(el));
 
-    // ==================== VIEWER 360 INIT ====================
-    try {
-        const frameFiles = [];
-        for (let i = 1; i <= 36; i++) {
-            frameFiles.push(`assets/images/360/1/100${String(i).padStart(2, '0')}.png`);
-        }
-        new Viewer360('viewerContainer', {
-            totalFrames: 36,
-            framesPerRow: 6,
-            frameFiles: frameFiles
-        });
-    } catch (err) {
-        console.warn('Viewer360 no disponible:', err.message);
+    // ==================== VIEWER 360 INIT (lazy) ====================
+    const viewerEl = document.getElementById('viewerContainer');
+    if (viewerEl) {
+        const obs = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                obs.disconnect();
+                try {
+                    const frameFiles = [];
+                    for (let i = 1; i <= 36; i++) {
+                        frameFiles.push(`assets/images/360/1/100${String(i).padStart(2, '0')}.webp`);
+                    }
+                    new Viewer360('viewerContainer', {
+                        totalFrames: 36,
+                        framesPerRow: 6,
+                        frameFiles: frameFiles
+                    });
+                } catch (err) {
+                    console.warn('Viewer360 no disponible:', err.message);
+                }
+            }
+        }, { rootMargin: '200px' });
+        obs.observe(viewerEl);
     }
 
     // ==================== CAROUSEL INIT ====================
     try {
         const carouselSlides = [
             {
-                img: 'assets/images/Carrusel/1.jpeg',
+                img: 'assets/images/Carrusel/1.webp',
                 icon: '🎨',
                 title: 'Identidad de Marca',
                 desc: 'Desarrollo completo de branding para startups y empresas consolidadas.',
                 color: '#E85D04'
             },
             {
-                img: 'assets/images/Carrusel/2.jpeg',
+                img: 'assets/images/Carrusel/2.webp',
                 icon: '📖',
                 title: 'Diseño Editorial',
                 desc: 'Maquetación de revistas, libros y catálogos con jerarquía visual cuidada.',
                 color: '#9D0208'
             },
             {
-                img: 'assets/images/Carrusel/3.jpeg',
+                img: 'assets/images/Carrusel/3.webp',
                 icon: '📱',
                 title: 'UX/UI',
                 desc: 'Interfaces funcionales y atractivas centradas en la experiencia de usuario.',
                 color: '#0C0F38'
             },
             {
-                img: 'assets/images/Carrusel/4.jpeg',
+                img: 'assets/images/Carrusel/4.webp',
                 icon: '🎲',
                 title: 'Modelado 3D',
                 desc: 'Renderizado de producto y visualización arquitectónica con Blender.',
                 color: '#FFBA08'
             },
             {
-                img: 'assets/images/Carrusel/5.jpeg',
+                img: 'assets/images/Carrusel/5.webp',
                 icon: '🧱',
                 title: 'Arte Urbano',
                 desc: 'Murales y escultura digital que transforman el espacio público.',
                 color: '#E85D04'
             },
             {
-                img: 'assets/images/Carrusel/6.jpeg',
+                img: 'assets/images/Carrusel/6.webp',
                 icon: '✏️',
                 title: 'Ilustración Vectorial',
                 desc: 'Sistemas de iconografía y gráficos vectoriales para plataformas digitales.',
