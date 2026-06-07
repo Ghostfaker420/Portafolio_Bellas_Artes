@@ -26,6 +26,7 @@ class Viewer360 {
         this._boundOnMove = null;
         this._boundOnUp = null;
         this._boundOnResize = null;
+        this._boundOnScroll = null;
         this._boundOnKeydown = null;
         this._boundOnSlider = null;
 
@@ -61,6 +62,7 @@ class Viewer360 {
         this.canvas.style.width = w + 'px';
         this.canvas.style.height = h + 'px';
         this.ctx.setTransform(2, 0, 0, 2, 0, 0);
+        this.render();
     }
 
     loadSprite() {
@@ -219,6 +221,10 @@ class Viewer360 {
         };
 
         this._boundOnResize = () => { this.resize(); };
+        this._boundOnScroll = () => {
+            if (this._scrollRaf) cancelAnimationFrame(this._scrollRaf);
+            this._scrollRaf = requestAnimationFrame(() => this.render());
+        };
         this._boundOnKeydown = (e) => {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
@@ -258,6 +264,8 @@ class Viewer360 {
         }
 
         window.addEventListener('resize', this._boundOnResize);
+        window.addEventListener('scroll', this._boundOnScroll, { passive: true });
+        window.addEventListener('touchmove', this._boundOnScroll, { passive: true });
     }
 
     toggleAutoRotate() {
@@ -349,6 +357,8 @@ class Viewer360 {
         window.removeEventListener('touchmove', this._boundOnMove);
         window.removeEventListener('touchend', this._boundOnUp);
         window.removeEventListener('resize', this._boundOnResize);
+        window.removeEventListener('scroll', this._boundOnScroll);
+        window.removeEventListener('touchmove', this._boundOnScroll);
         this.stage.removeEventListener('keydown', this._boundOnKeydown);
         if (this.slider) {
             this.slider.removeEventListener('input', this._boundOnSlider);
