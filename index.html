@@ -23,18 +23,19 @@
 
     <main id="page">
 
-    <!-- ===== SPRAY TEXTURE OVERLAY ===== -->
+    <!-- ===== URBAN WALL BACKGROUND ===== -->
+    <div class="bg-wall" aria-hidden="true"></div>
+
+    <!-- ===== GRAIN OVERLAY ===== -->
     <svg class="noise-svg" aria-hidden="true">
         <filter id="noiseFilter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="4" stitchTiles="stitch"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="5" stitchTiles="stitch"/>
             <feComponentTransfer>
-                <feFuncA type="linear" slope="0.6"/>
+                <feFuncA type="linear" slope="0.45"/>
             </feComponentTransfer>
         </filter>
-        <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.06" mix-blend-mode="screen"/>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.08" mix-blend-mode="overlay"/>
     </svg>
-    <!-- ===== CONCRETE TEXTURE ===== -->
-    <div class="concrete-texture" aria-hidden="true"></div>
 
     <!-- ===== CUSTOM CURSOR ===== -->
     <div class="cursor-dot" id="cursorDot"></div>
@@ -148,6 +149,7 @@
     <!-- ===== PROJECTS ===== -->
     <section class="projects section" id="projects">
         <div class="spray-ring spray-ring--3" aria-hidden="true"></div>
+        <div class="spray-ring spray-ring--4" aria-hidden="true"></div>
         <div class="container">
             <h2 class="section-title reveal-up">Proyectos <span class="accent">Destacados</span></h2>
             <div class="project-card-wrapper project-card-wrapper--max reveal-up">
@@ -246,11 +248,12 @@
     <!-- ===== MOTION GRAPHICS ===== -->
     <section class="motion section" id="motion">
         <div class="spray-ring spray-ring--2" aria-hidden="true"></div>
+        <div class="spray-ring spray-ring--5" aria-hidden="true"></div>
         <div class="container">
             <div class="project-card-wrapper reveal-up">
                 <div class="project-card project-card--static">
                     <div class="project-card-img project-card-img--gif">
-                        <img src="assets/images/Motiom.webp" alt="Motion Graphics" width="820" height="500" loading="lazy" decoding="async">
+                        <img src="assets/images/Motiom.webp" alt="Motion Graphics" width="820" height="308" loading="lazy">
                     </div>
                     <div class="project-card-body">
                         <h3 class="project-card-title">Motion <span class="accent">Graphics</span></h3>
