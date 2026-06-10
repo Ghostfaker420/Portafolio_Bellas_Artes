@@ -365,4 +365,96 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (err) {
         console.warn('Carrusel no disponible:', err.message);
     }
+
+    // ==================== OPTIONS DROPDOWN ====================
+    const optionsBtn = document.getElementById('optionsBtn');
+    const optionsDropdown = document.getElementById('optionsDropdown');
+
+    if (optionsBtn && optionsDropdown) {
+        optionsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = optionsDropdown.classList.toggle('open');
+            optionsBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!optionsBtn.contains(e.target) && !optionsDropdown.contains(e.target)) {
+                optionsDropdown.classList.remove('open');
+                optionsBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                optionsDropdown.classList.remove('open');
+                optionsBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // ==================== CV MODAL ====================
+    const cvModal = document.getElementById('cvModal');
+    const cvModalClose = document.getElementById('cvModalClose');
+
+    function openCvModal(e) {
+        if (e) e.preventDefault();
+        lastFocused = document.activeElement;
+        cvModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        if (pageWrapper) pageWrapper.setAttribute('aria-hidden', 'true');
+        if (cvModalClose) cvModalClose.focus();
+        if (optionsDropdown) {
+            optionsDropdown.classList.remove('open');
+            if (optionsBtn) optionsBtn.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    function closeCvModal() {
+        cvModal.classList.remove('open');
+        document.body.style.overflow = '';
+        if (pageWrapper) pageWrapper.removeAttribute('aria-hidden');
+        if (lastFocused) lastFocused.focus();
+    }
+
+    if (cvModal && cvModalClose) {
+        document.querySelector('[data-action="view-cv"]')?.addEventListener('click', openCvModal);
+
+        cvModalClose.addEventListener('click', closeCvModal);
+
+        cvModal.addEventListener('click', (e) => {
+            if (e.target === cvModal) closeCvModal();
+        });
+    }
+
+    if (cvModal) {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && cvModal.classList.contains('open')) {
+                closeCvModal();
+            }
+            if (cvModal.classList.contains('open')) {
+                const focusable = cvModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                if (focusable.length === 0) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.key === 'Tab') {
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            }
+        });
+    }
+
+    // Add new interactive elements to cursor hover
+    if (ring) {
+        document.querySelectorAll('.options-btn, .options-dropdown-item, .cv-modal-content .btn').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
+    }
+
 });
